@@ -1,0 +1,6 @@
+START txn-A [key1]
+COMMIT txn-A
+START txn-slow [key1]
+COMMIT txn-slow
+START txn-fast [key1]
+COMMIT txn-fast
