@@ -48,3 +48,28 @@ func (w *WAL) ReadAll() []string {
 	}
 	return entries
 }
+
+
+
+
+func (da *DependencyAnalyzer) TryLock(txnID string, keys []string, wait bool) bool {
+    timeout := time.After(10 * time.Second)
+    for {
+        da.mu.Lock()
+        if da.IsIndependent(keys) {
+            for _, k := range keys {
+                da.activeLocks[k] = txnID
+            }
+            da.mu.Unlock()
+            return true
+        }
+        da.mu.Unlock()
+        
+        if !wait { return false } 
+        
+        select {
+        case <-timeout: return false // Slow Path queues for 10s max
+        case <-time.After(50 * time.Millisecond): // Poll
+        }
+    }
+}

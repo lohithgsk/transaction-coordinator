@@ -1,4 +1,4 @@
-package main
+/* package main
 
 import (
 	"bytes"
@@ -77,5 +77,140 @@ func (tm *TransactionManager) sendDecision(meta TransactionMetadata, action stri
 		url := fmt.Sprintf("%s/commit", p)
 		body, _ := json.Marshal(CommitRequest{TxnID: meta.ID, Action: action})
 		http.Post(url, "application/json", bytes.NewBuffer(body))
+	}
+} */
+
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+	"sync"
+	"sync/atomic"
+	"time"
+)
+
+type TransactionManager struct {
+	analyzer *DependencyAnalyzer
+	wal      *WAL
+}
+
+const ENABLE_DEPENDENCY_ANALYZER = true
+
+func NewCoordinator(walFile string) *TransactionManager {
+	wal := NewWAL(walFile)
+	history := wal.ReadAll()
+	log.Printf("--- RECOVERY: Found %d historical entries in log ---", len(history))
+
+	return &TransactionManager{
+		analyzer: NewDependencyAnalyzer(),
+		wal:      wal,
+	}
+}
+
+func (tm *TransactionManager) HandleBegin(w http.ResponseWriter, r *http.Request) {
+	var meta TransactionMetadata
+	json.NewDecoder(r.Body).Decode(&meta)
+
+	// ==========================================
+	// Standard Data-Blind 2PC
+	// ==========================================
+	if !ENABLE_DEPENDENCY_ANALYZER {
+		// Just throw everything at the database immediately
+		tm.execute2PC(w, meta, "STANDARD_2PC")
+		return
+	}
+
+	// ==========================================
+	// Hybrid Coordinator
+	// ==========================================
+	startTime := time.Now()
+
+	// 1. Run it once for the actual transaction logic
+	isFastPath := tm.analyzer.IsIndependent(meta.Keys)
+
+	// 2. Run it 10,000 times to bypass the Windows Clock limit
+	for i := 0; i < 10000; i++ {
+		tm.analyzer.IsIndependent(meta.Keys)
+	}
+
+	// 3. Stop the timer and divide by 10,000 to get the exact Nanosecond time
+	totalTime := time.Since(startTime)
+	avgDecisionTime := totalTime / 10000
+
+	log.Printf("[Metrics] Txn %s: Dependency Analysis took %v per txn", meta.ID, avgDecisionTime)
+
+	// 4. ROUTE THE TRANSACTION
+	if isFastPath {
+		if !tm.analyzer.TryLock(meta.ID, meta.Keys, false) {
+			http.Error(w, "Conflict", 409)
+			return
+		}
+		defer tm.analyzer.Release(meta.Keys)
+		
+		// FAST PATH: Executes immediately, skips the RAFT_PROPOSE disk write
+		tm.execute2PC(w, meta, "FAST_PATH")
+		
+	} else {
+		// SLOW PATH: Requires a strict WAL disk write for ordering before locking
+		tm.wal.Write(fmt.Sprintf("RAFT_PROPOSE %s %v", meta.ID, meta.Keys))
+		
+		if !tm.analyzer.TryLock(meta.ID, meta.Keys, true) {
+			http.Error(w, "Timeout", 409)
+			return
+		}
+		defer tm.analyzer.Release(meta.Keys)
+		tm.execute2PC(w, meta, "SLOW_PATH")
+	}
+}
+
+func (tm *TransactionManager) execute2PC(w http.ResponseWriter, meta TransactionMetadata, mode string) {
+	log.Printf("[Dispatcher] Starting 2PC for %s across %d nodes...", meta.ID, len(meta.Participants))
+	
+	if tm.broadcast(meta.Participants, "prepare", meta) {
+		tm.wal.Write(fmt.Sprintf("COMMIT %s", meta.ID))
+		tm.sendDecision(meta, "COMMIT")
+		fmt.Fprintf(w, "SUCCESS [%s]: Transaction %s Committed across %d nodes\n", mode, meta.ID, len(meta.Participants))
+	} else {
+		tm.wal.Write(fmt.Sprintf("ABORT %s", meta.ID))
+		tm.sendDecision(meta, "ABORT")
+		http.Error(w, fmt.Sprintf("FAILED [%s]: Transaction Aborted\n", mode), 500)
+	}
+}
+
+// Parallel Execution Engine
+func (tm *TransactionManager) broadcast(participants []string, endpoint string, meta TransactionMetadata) bool {
+	var wg sync.WaitGroup
+	var successCount int32 = 0
+
+	// Fire all 100 requests at the EXACT SAME TIME
+	for _, p := range participants {
+		wg.Add(1)
+		go func(url string) {
+			defer wg.Done()
+			fullURL := fmt.Sprintf("%s/%s", url, endpoint)
+			body, _ := json.Marshal(PrepareRequest{TxnID: meta.ID, Keys: meta.Keys})
+			resp, err := http.Post(fullURL, "application/json", bytes.NewBuffer(body))
+			if err == nil && resp.StatusCode == 200 {
+				atomic.AddInt32(&successCount, 1) // Thread-safe counter
+			}
+		}(p)
+	}
+	
+	wg.Wait() // Wait for all 100 databases to reply
+	return int(successCount) == len(participants)
+}
+
+// Fire-and-Forget Parallel Commits
+func (tm *TransactionManager) sendDecision(meta TransactionMetadata, action string) {
+	for _, p := range meta.Participants {
+		go func(url string) {
+			fullURL := fmt.Sprintf("%s/commit", url)
+			body, _ := json.Marshal(CommitRequest{TxnID: meta.ID, Action: action})
+			http.Post(fullURL, "application/json", bytes.NewBuffer(body))
+		}(p)
 	}
 }

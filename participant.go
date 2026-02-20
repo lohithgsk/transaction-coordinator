@@ -22,7 +22,7 @@ func (p *Participant) HandlePrepare(w http.ResponseWriter, r *http.Request) {
 	defer p.mu.Unlock()
 
 	log.Printf("[Participant] simulating slow database work...")
-    time.Sleep(10 * time.Second)
+	time.Sleep(3 * time.Second) 
 
 	// Check local locks
 	for _, k := range req.Keys {
