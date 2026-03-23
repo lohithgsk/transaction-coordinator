@@ -51,7 +51,7 @@ func (w *WAL) ReadAll() []string {
 
 
 
-
+/* 
 func (da *DependencyAnalyzer) TryLock(txnID string, keys []string, wait bool) bool {
     timeout := time.After(10 * time.Second)
     for {
@@ -72,4 +72,4 @@ func (da *DependencyAnalyzer) TryLock(txnID string, keys []string, wait bool) bo
         case <-time.After(50 * time.Millisecond): // Poll
         }
     }
-}
+} */

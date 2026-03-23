@@ -744,3 +744,1239 @@ COMMIT txn-28
 COMMIT txn-9
 COMMIT txn-31
 COMMIT txn-39
+FAST_COMMIT txn-73 [item-0 item-2]
+FAST_COMMIT txn-64 [item-16 item-7]
+FAST_COMMIT txn-16 [item-5 item-8]
+FAST_COMMIT txn-59 [item-91 item-56]
+RAFT_PROPOSE txn-99 [item-36 item-0]
+RAFT_PROPOSE txn-35 [item-24 item-2]
+RAFT_PROPOSE txn-162 [item-11 item-2]
+RAFT_PROPOSE txn-76 [item-2 item-4]
+RAFT_PROPOSE txn-71 [item-17 item-16]
+RAFT_PROPOSE txn-94 [item-0 item-0]
+FAST_COMMIT txn-188 [item-1 item-87]
+RAFT_PROPOSE txn-37 [item-8 item-6]
+RAFT_PROPOSE txn-163 [item-0 item-4]
+RAFT_PROPOSE txn-15 [item-0 item-2]
+FAST_COMMIT txn-107 [item-33 item-3]
+RAFT_PROPOSE txn-112 [item-0 item-10]
+RAFT_PROPOSE txn-36 [item-2 item-0]
+RAFT_PROPOSE txn-136 [item-1 item-0]
+RAFT_PROPOSE txn-57 [item-3 item-0]
+FAST_COMMIT txn-26 [item-21 item-6]
+RAFT_PROPOSE txn-90 [item-0 item-1]
+RAFT_PROPOSE txn-38 [item-7 item-7]
+RAFT_PROPOSE txn-10 [item-2 item-0]
+FAST_COMMIT txn-80 [item-19 item-9]
+FAST_COMMIT txn-129 [item-10 item-17]
+RAFT_PROPOSE txn-187 [item-12 item-2]
+RAFT_PROPOSE txn-101 [item-16 item-54]
+RAFT_PROPOSE txn-120 [item-2 item-3]
+FAST_COMMIT txn-85 [item-4 item-22]
+RAFT_PROPOSE txn-33 [item-2 item-0]
+RAFT_PROPOSE txn-75 [item-31 item-0]
+RAFT_PROPOSE txn-117 [item-66 item-3]
+RAFT_PROPOSE txn-54 [item-2 item-58]
+RAFT_PROPOSE txn-39 [item-33 item-6]
+RAFT_PROPOSE txn-1 [item-0 item-15]
+RAFT_PROPOSE txn-149 [item-5 item-32]
+RAFT_PROPOSE txn-127 [item-16 item-3]
+FAST_COMMIT txn-115 [item-44 item-20]
+RAFT_PROPOSE txn-86 [item-2 item-0]
+RAFT_PROPOSE txn-108 [item-0 item-56]
+RAFT_PROPOSE txn-126 [item-18 item-1]
+RAFT_PROPOSE txn-46 [item-3 item-2]
+RAFT_PROPOSE txn-159 [item-1 item-0]
+FAST_COMMIT txn-130 [item-14 item-50]
+RAFT_PROPOSE txn-43 [item-1 item-16]
+RAFT_PROPOSE txn-22 [item-2 item-1]
+RAFT_PROPOSE txn-148 [item-7 item-11]
+FAST_COMMIT txn-151 [item-40 item-36]
+RAFT_PROPOSE txn-30 [item-0 item-81]
+RAFT_PROPOSE txn-32 [item-5 item-0]
+RAFT_PROPOSE txn-145 [item-6 item-18]
+RAFT_PROPOSE txn-166 [item-2 item-0]
+RAFT_PROPOSE txn-70 [item-7 item-1]
+RAFT_PROPOSE txn-113 [item-1 item-7]
+RAFT_PROPOSE txn-87 [item-3 item-0]
+RAFT_PROPOSE txn-53 [item-8 item-86]
+RAFT_PROPOSE txn-122 [item-0 item-3]
+RAFT_PROPOSE txn-140 [item-8 item-60]
+FAST_COMMIT txn-19 [item-62 item-12]
+RAFT_PROPOSE txn-66 [item-13 item-1]
+FAST_COMMIT txn-84 [item-26 item-34]
+FAST_COMMIT txn-44 [item-25 item-68]
+FAST_COMMIT txn-23 [item-88 item-59]
+RAFT_PROPOSE txn-42 [item-2 item-40]
+RAFT_PROPOSE txn-124 [item-96 item-0]
+RAFT_PROPOSE txn-96 [item-0 item-30]
+RAFT_PROPOSE txn-132 [item-1 item-1]
+RAFT_PROPOSE txn-2 [item-1 item-1]
+RAFT_PROPOSE txn-63 [item-0 item-1]
+RAFT_PROPOSE txn-5 [item-3 item-2]
+RAFT_PROPOSE txn-47 [item-18 item-2]
+RAFT_PROPOSE txn-24 [item-48 item-1]
+FAST_COMMIT txn-93 [item-38 item-11]
+RAFT_PROPOSE txn-0 [item-23 item-0]
+RAFT_PROPOSE txn-91 [item-17 item-18]
+RAFT_PROPOSE txn-185 [item-82 item-4]
+RAFT_PROPOSE txn-194 [item-40 item-7]
+RAFT_PROPOSE txn-31 [item-32 item-1]
+RAFT_PROPOSE txn-157 [item-40 item-0]
+RAFT_PROPOSE txn-176 [item-29 item-10]
+RAFT_PROPOSE txn-98 [item-1 item-9]
+RAFT_PROPOSE txn-161 [item-7 item-1]
+RAFT_PROPOSE txn-116 [item-2 item-27]
+RAFT_PROPOSE txn-21 [item-19 item-0]
+RAFT_PROPOSE txn-174 [item-1 item-3]
+RAFT_PROPOSE txn-195 [item-3 item-5]
+RAFT_PROPOSE txn-153 [item-14 item-5]
+RAFT_PROPOSE txn-104 [item-6 item-11]
+RAFT_PROPOSE txn-135 [item-7 item-7]
+RAFT_PROPOSE txn-78 [item-8 item-3]
+RAFT_PROPOSE txn-67 [item-2 item-4]
+RAFT_PROPOSE txn-179 [item-13 item-4]
+RAFT_PROPOSE txn-133 [item-0 item-1]
+RAFT_PROPOSE txn-186 [item-32 item-0]
+RAFT_PROPOSE txn-119 [item-0 item-6]
+RAFT_PROPOSE txn-50 [item-3 item-31]
+RAFT_PROPOSE txn-138 [item-7 item-9]
+RAFT_PROPOSE txn-105 [item-50 item-5]
+RAFT_PROPOSE txn-178 [item-10 item-5]
+RAFT_PROPOSE txn-68 [item-4 item-39]
+RAFT_PROPOSE txn-189 [item-0 item-4]
+RAFT_PROPOSE txn-97 [item-8 item-4]
+RAFT_PROPOSE txn-11 [item-3 item-1]
+RAFT_PROPOSE txn-131 [item-23 item-14]
+RAFT_PROPOSE txn-172 [item-11 item-0]
+RAFT_PROPOSE txn-158 [item-22 item-19]
+RAFT_PROPOSE txn-52 [item-1 item-3]
+RAFT_PROPOSE txn-121 [item-1 item-2]
+RAFT_PROPOSE txn-29 [item-0 item-0]
+RAFT_PROPOSE txn-41 [item-2 item-0]
+RAFT_PROPOSE txn-40 [item-4 item-2]
+RAFT_PROPOSE txn-65 [item-0 item-44]
+RAFT_PROPOSE txn-7 [item-22 item-11]
+RAFT_PROPOSE txn-152 [item-0 item-13]
+RAFT_PROPOSE txn-13 [item-31 item-0]
+RAFT_PROPOSE txn-100 [item-1 item-0]
+RAFT_PROPOSE txn-79 [item-50 item-3]
+RAFT_PROPOSE txn-123 [item-3 item-63]
+RAFT_PROPOSE txn-106 [item-57 item-0]
+RAFT_PROPOSE txn-48 [item-1 item-2]
+RAFT_PROPOSE txn-128 [item-0 item-22]
+RAFT_PROPOSE txn-92 [item-3 item-6]
+RAFT_PROPOSE txn-125 [item-1 item-24]
+RAFT_PROPOSE txn-146 [item-0 item-56]
+RAFT_PROPOSE txn-77 [item-5 item-29]
+RAFT_PROPOSE txn-196 [item-0 item-5]
+RAFT_PROPOSE txn-45 [item-7 item-23]
+RAFT_PROPOSE txn-168 [item-1 item-0]
+RAFT_PROPOSE txn-28 [item-55 item-0]
+RAFT_PROPOSE txn-55 [item-0 item-1]
+RAFT_PROPOSE txn-6 [item-0 item-0]
+RAFT_PROPOSE txn-170 [item-3 item-4]
+RAFT_PROPOSE txn-20 [item-5 item-4]
+RAFT_PROPOSE txn-169 [item-3 item-29]
+RAFT_PROPOSE txn-147 [item-13 item-26]
+RAFT_PROPOSE txn-27 [item-32 item-0]
+RAFT_PROPOSE txn-134 [item-4 item-89]
+RAFT_PROPOSE txn-103 [item-0 item-2]
+RAFT_PROPOSE txn-182 [item-19 item-25]
+RAFT_PROPOSE txn-51 [item-5 item-100]
+RAFT_PROPOSE txn-69 [item-41 item-17]
+RAFT_PROPOSE txn-109 [item-0 item-0]
+RAFT_PROPOSE txn-164 [item-30 item-5]
+RAFT_PROPOSE txn-14 [item-0 item-36]
+RAFT_PROPOSE txn-58 [item-16 item-71]
+RAFT_PROPOSE txn-193 [item-12 item-45]
+RAFT_PROPOSE txn-110 [item-3 item-0]
+FAST_COMMIT txn-143 [item-13 item-58]
+RAFT_PROPOSE txn-118 [item-0 item-2]
+RAFT_PROPOSE txn-95 [item-2 item-6]
+RAFT_PROPOSE txn-155 [item-80 item-9]
+RAFT_PROPOSE txn-177 [item-3 item-3]
+RAFT_PROPOSE txn-142 [item-20 item-29]
+RAFT_PROPOSE txn-199 [item-14 item-4]
+RAFT_PROPOSE txn-72 [item-43 item-11]
+RAFT_PROPOSE txn-34 [item-0 item-5]
+RAFT_PROPOSE txn-184 [item-17 item-36]
+RAFT_PROPOSE txn-183 [item-0 item-3]
+RAFT_PROPOSE txn-88 [item-0 item-3]
+RAFT_PROPOSE txn-165 [item-46 item-0]
+RAFT_PROPOSE txn-137 [item-0 item-1]
+RAFT_PROPOSE txn-74 [item-0 item-0]
+RAFT_PROPOSE txn-144 [item-0 item-0]
+RAFT_PROPOSE txn-82 [item-2 item-0]
+RAFT_PROPOSE txn-102 [item-44 item-0]
+RAFT_PROPOSE txn-192 [item-96 item-11]
+RAFT_PROPOSE txn-9 [item-16 item-0]
+RAFT_PROPOSE txn-25 [item-11 item-3]
+RAFT_PROPOSE txn-17 [item-1 item-1]
+RAFT_PROPOSE txn-167 [item-0 item-4]
+RAFT_PROPOSE txn-175 [item-6 item-0]
+RAFT_PROPOSE txn-180 [item-36 item-16]
+RAFT_PROPOSE txn-8 [item-0 item-1]
+RAFT_PROPOSE txn-60 [item-32 item-0]
+RAFT_PROPOSE txn-111 [item-88 item-0]
+RAFT_PROPOSE txn-173 [item-87 item-0]
+RAFT_PROPOSE txn-18 [item-9 item-4]
+RAFT_PROPOSE txn-114 [item-13 item-0]
+RAFT_PROPOSE txn-191 [item-32 item-0]
+RAFT_PROPOSE txn-12 [item-0 item-2]
+RAFT_PROPOSE txn-4 [item-4 item-3]
+RAFT_PROPOSE txn-139 [item-1 item-1]
+RAFT_PROPOSE txn-81 [item-5 item-55]
+RAFT_PROPOSE txn-190 [item-86 item-0]
+RAFT_PROPOSE txn-62 [item-0 item-2]
+RAFT_PROPOSE txn-197 [item-0 item-1]
+RAFT_PROPOSE txn-154 [item-0 item-4]
+RAFT_PROPOSE txn-171 [item-49 item-0]
+RAFT_PROPOSE txn-83 [item-0 item-9]
+RAFT_PROPOSE txn-181 [item-0 item-1]
+RAFT_PROPOSE txn-49 [item-0 item-76]
+RAFT_PROPOSE txn-3 [item-0 item-4]
+ABORT txn-73
+ABORT txn-64
+ABORT txn-59
+ABORT txn-16
+ABORT txn-188
+ABORT txn-107
+ABORT txn-26
+ABORT txn-80
+ABORT txn-129
+ABORT txn-85
+ABORT txn-115
+ABORT txn-130
+ABORT txn-151
+ABORT txn-19
+ABORT txn-84
+ABORT txn-44
+ABORT txn-23
+ABORT txn-93
+ABORT txn-143
+ABORT txn-60
+ABORT txn-35
+ABORT txn-135
+ABORT txn-101
+ABORT txn-77
+ABORT txn-123
+ABORT txn-139
+ABORT txn-140
+ABORT txn-155
+ABORT txn-145
+ABORT txn-69
+ABORT txn-185
+ABORT txn-158
+ABORT txn-131
+ABORT txn-193
+ABORT txn-72
+ABORT txn-147
+ABORT txn-116
+ABORT txn-94
+ABORT txn-180
+ABORT txn-38
+ABORT txn-142
+ABORT txn-178
+ABORT txn-39
+ABORT txn-91
+ABORT txn-53
+ABORT txn-52
+ABORT txn-182
+ABORT txn-199
+ABORT txn-7
+ABORT txn-62
+ABORT txn-58
+ABORT txn-176
+ABORT txn-149
+ABORT txn-138
+ABORT txn-17
+ABORT txn-37
+ABORT txn-184
+ABORT txn-50
+ABORT txn-68
+ABORT txn-192
+ABORT txn-109
+ABORT txn-47
+ABORT txn-81
+ABORT txn-45
+ABORT txn-132
+ABORT txn-71
+ABORT txn-134
+ABORT txn-79
+ABORT txn-104
+ABORT txn-114
+ABORT txn-42
+ABORT txn-51
+ABORT txn-31
+ABORT txn-18
+ABORT txn-169
+FAST_COMMIT txn-12 [item-0 item-7]
+FAST_COMMIT txn-77 [item-27 item-1]
+FAST_COMMIT txn-7 [item-84 item-98]
+FAST_COMMIT txn-74 [item-5 item-49]
+FAST_COMMIT txn-13 [item-4 item-36]
+RAFT_PROPOSE txn-5 [item-30 item-7]
+FAST_COMMIT txn-151 [item-11 item-17]
+RAFT_PROPOSE txn-101 [item-23 item-0]
+RAFT_PROPOSE txn-149 [item-61 item-0]
+RAFT_PROPOSE txn-105 [item-0 item-31]
+RAFT_PROPOSE txn-146 [item-0 item-2]
+RAFT_PROPOSE txn-34 [item-0 item-79]
+FAST_COMMIT txn-67 [item-16 item-3]
+RAFT_PROPOSE txn-185 [item-5 item-7]
+RAFT_PROPOSE txn-2 [item-9 item-7]
+FAST_COMMIT txn-32 [item-22 item-89]
+RAFT_PROPOSE txn-23 [item-0 item-3]
+RAFT_PROPOSE txn-57 [item-1 item-1]
+RAFT_PROPOSE txn-112 [item-98 item-20]
+FAST_COMMIT txn-158 [item-14 item-2]
+RAFT_PROPOSE txn-60 [item-8 item-1]
+RAFT_PROPOSE txn-35 [item-1 item-0]
+RAFT_PROPOSE txn-48 [item-0 item-16]
+RAFT_PROPOSE txn-148 [item-4 item-0]
+RAFT_PROPOSE txn-3 [item-1 item-1]
+FAST_COMMIT txn-54 [item-48 item-9]
+FAST_COMMIT txn-136 [item-10 item-85]
+RAFT_PROPOSE txn-102 [item-53 item-0]
+RAFT_PROPOSE txn-164 [item-80 item-0]
+RAFT_PROPOSE txn-70 [item-0 item-2]
+RAFT_PROPOSE txn-39 [item-5 item-43]
+RAFT_PROPOSE txn-31 [item-0 item-50]
+RAFT_PROPOSE txn-178 [item-0 item-2]
+RAFT_PROPOSE txn-109 [item-0 item-6]
+FAST_COMMIT txn-68 [item-45 item-92]
+RAFT_PROPOSE txn-108 [item-0 item-5]
+RAFT_PROPOSE txn-86 [item-67 item-0]
+RAFT_PROPOSE txn-63 [item-0 item-2]
+RAFT_PROPOSE txn-97 [item-25 item-0]
+RAFT_PROPOSE txn-30 [item-61 item-7]
+FAST_COMMIT txn-103 [item-6 item-40]
+RAFT_PROPOSE txn-155 [item-13 item-1]
+RAFT_PROPOSE txn-193 [item-0 item-46]
+RAFT_PROPOSE txn-88 [item-23 item-0]
+RAFT_PROPOSE txn-49 [item-5 item-8]
+RAFT_PROPOSE txn-4 [item-61 item-5]
+FAST_COMMIT txn-134 [item-50 item-81]
+RAFT_PROPOSE txn-71 [item-0 item-0]
+RAFT_PROPOSE txn-58 [item-6 item-4]
+RAFT_PROPOSE txn-29 [item-1 item-5]
+RAFT_PROPOSE txn-62 [item-0 item-2]
+RAFT_PROPOSE txn-195 [item-1 item-0]
+RAFT_PROPOSE txn-120 [item-11 item-1]
+RAFT_PROPOSE txn-190 [item-2 item-1]
+RAFT_PROPOSE txn-55 [item-0 item-47]
+RAFT_PROPOSE txn-173 [item-1 item-4]
+RAFT_PROPOSE txn-161 [item-5 item-11]
+RAFT_PROPOSE txn-135 [item-0 item-0]
+FAST_COMMIT txn-183 [item-26 item-41]
+FAST_COMMIT txn-123 [item-70 item-42]
+RAFT_PROPOSE txn-181 [item-78 item-1]
+FAST_COMMIT txn-131 [item-34 item-51]
+RAFT_PROPOSE txn-72 [item-6 item-7]
+RAFT_PROPOSE txn-92 [item-7 item-0]
+RAFT_PROPOSE txn-184 [item-3 item-33]
+RAFT_PROPOSE txn-189 [item-16 item-1]
+RAFT_PROPOSE txn-130 [item-1 item-0]
+RAFT_PROPOSE txn-124 [item-0 item-22]
+RAFT_PROPOSE txn-174 [item-2 item-17]
+RAFT_PROPOSE txn-37 [item-1 item-20]
+RAFT_PROPOSE txn-128 [item-4 item-11]
+RAFT_PROPOSE txn-170 [item-3 item-0]
+RAFT_PROPOSE txn-46 [item-2 item-0]
+RAFT_PROPOSE txn-122 [item-2 item-3]
+RAFT_PROPOSE txn-129 [item-0 item-3]
+FAST_COMMIT txn-20 [item-28 item-74]
+RAFT_PROPOSE txn-144 [item-1 item-50]
+RAFT_PROPOSE txn-188 [item-0 item-17]
+RAFT_PROPOSE txn-76 [item-7 item-2]
+RAFT_PROPOSE txn-147 [item-0 item-0]
+RAFT_PROPOSE txn-171 [item-5 item-3]
+RAFT_PROPOSE txn-28 [item-19 item-1]
+RAFT_PROPOSE txn-139 [item-0 item-2]
+RAFT_PROPOSE txn-180 [item-67 item-0]
+RAFT_PROPOSE txn-99 [item-30 item-0]
+RAFT_PROPOSE txn-138 [item-0 item-6]
+RAFT_PROPOSE txn-85 [item-17 item-28]
+RAFT_PROPOSE txn-6 [item-0 item-0]
+RAFT_PROPOSE txn-194 [item-0 item-29]
+RAFT_PROPOSE txn-140 [item-12 item-0]
+FAST_COMMIT txn-100 [item-54 item-44]
+RAFT_PROPOSE txn-89 [item-25 item-0]
+FAST_COMMIT txn-51 [item-75 item-58]
+RAFT_PROPOSE txn-93 [item-9 item-0]
+RAFT_PROPOSE txn-165 [item-0 item-3]
+RAFT_PROPOSE txn-133 [item-3 item-4]
+RAFT_PROPOSE txn-36 [item-0 item-19]
+RAFT_PROPOSE txn-169 [item-4 item-0]
+RAFT_PROPOSE txn-82 [item-5 item-10]
+RAFT_PROPOSE txn-115 [item-68 item-1]
+RAFT_PROPOSE txn-64 [item-14 item-0]
+RAFT_PROPOSE txn-16 [item-0 item-0]
+RAFT_PROPOSE txn-0 [item-0 item-62]
+RAFT_PROPOSE txn-160 [item-9 item-76]
+RAFT_PROPOSE txn-111 [item-0 item-1]
+RAFT_PROPOSE txn-40 [item-9 item-0]
+RAFT_PROPOSE txn-156 [item-18 item-0]
+RAFT_PROPOSE txn-106 [item-5 item-0]
+RAFT_PROPOSE txn-113 [item-1 item-0]
+RAFT_PROPOSE txn-157 [item-0 item-0]
+RAFT_PROPOSE txn-91 [item-63 item-0]
+RAFT_PROPOSE txn-87 [item-95 item-1]
+RAFT_PROPOSE txn-1 [item-45 item-0]
+RAFT_PROPOSE txn-47 [item-1 item-0]
+RAFT_PROPOSE txn-143 [item-33 item-7]
+RAFT_PROPOSE txn-177 [item-3 item-61]
+RAFT_PROPOSE txn-21 [item-10 item-43]
+RAFT_PROPOSE txn-45 [item-1 item-0]
+RAFT_PROPOSE txn-14 [item-32 item-0]
+RAFT_PROPOSE txn-33 [item-2 item-3]
+RAFT_PROPOSE txn-75 [item-2 item-1]
+RAFT_PROPOSE txn-52 [item-1 item-0]
+RAFT_PROPOSE txn-198 [item-0 item-5]
+RAFT_PROPOSE txn-192 [item-9 item-1]
+RAFT_PROPOSE txn-154 [item-35 item-10]
+RAFT_PROPOSE txn-145 [item-0 item-3]
+RAFT_PROPOSE txn-96 [item-0 item-35]
+RAFT_PROPOSE txn-163 [item-1 item-2]
+RAFT_PROPOSE txn-73 [item-0 item-2]
+RAFT_PROPOSE txn-43 [item-31 item-4]
+RAFT_PROPOSE txn-118 [item-1 item-1]
+RAFT_PROPOSE txn-78 [item-0 item-66]
+RAFT_PROPOSE txn-159 [item-24 item-49]
+RAFT_PROPOSE txn-162 [item-2 item-0]
+RAFT_PROPOSE txn-61 [item-0 item-2]
+RAFT_PROPOSE txn-59 [item-2 item-17]
+RAFT_PROPOSE txn-121 [item-0 item-1]
+RAFT_PROPOSE txn-10 [item-8 item-3]
+RAFT_PROPOSE txn-38 [item-3 item-1]
+RAFT_PROPOSE txn-42 [item-1 item-71]
+RAFT_PROPOSE txn-19 [item-2 item-2]
+RAFT_PROPOSE txn-179 [item-2 item-8]
+RAFT_PROPOSE txn-8 [item-20 item-16]
+RAFT_PROPOSE txn-15 [item-3 item-11]
+RAFT_PROPOSE txn-69 [item-0 item-6]
+RAFT_PROPOSE txn-66 [item-0 item-19]
+RAFT_PROPOSE txn-141 [item-4 item-2]
+RAFT_PROPOSE txn-83 [item-12 item-1]
+RAFT_PROPOSE txn-167 [item-0 item-0]
+RAFT_PROPOSE txn-53 [item-5 item-0]
+RAFT_PROPOSE txn-126 [item-0 item-51]
+RAFT_PROPOSE txn-176 [item-25 item-0]
+RAFT_PROPOSE txn-107 [item-1 item-3]
+RAFT_PROPOSE txn-116 [item-0 item-3]
+RAFT_PROPOSE txn-191 [item-1 item-84]
+RAFT_PROPOSE txn-25 [item-12 item-22]
+RAFT_PROPOSE txn-127 [item-4 item-2]
+RAFT_PROPOSE txn-17 [item-16 item-0]
+RAFT_PROPOSE txn-94 [item-7 item-25]
+RAFT_PROPOSE txn-65 [item-9 item-62]
+RAFT_PROPOSE txn-11 [item-10 item-9]
+RAFT_PROPOSE txn-26 [item-22 item-10]
+RAFT_PROPOSE txn-153 [item-57 item-1]
+RAFT_PROPOSE txn-152 [item-10 item-4]
+RAFT_PROPOSE txn-79 [item-79 item-1]
+RAFT_PROPOSE txn-95 [item-41 item-1]
+RAFT_PROPOSE txn-41 [item-0 item-79]
+RAFT_PROPOSE txn-175 [item-0 item-89]
+RAFT_PROPOSE txn-199 [item-1 item-7]
+RAFT_PROPOSE txn-84 [item-76 item-1]
+RAFT_PROPOSE txn-98 [item-1 item-0]
+RAFT_PROPOSE txn-166 [item-7 item-3]
+RAFT_PROPOSE txn-90 [item-0 item-0]
+FAST_COMMIT txn-110 [item-43 item-32]
+FAST_COMMIT txn-117 [item-39 item-25]
+RAFT_PROPOSE txn-125 [item-11 item-2]
+ABORT txn-7
+ABORT txn-12
+ABORT txn-77
+ABORT txn-13
+ABORT txn-74
+ABORT txn-151
+ABORT txn-67
+ABORT txn-32
+ABORT txn-54
+ABORT txn-158
+ABORT txn-136
+ABORT txn-68
+ABORT txn-103
+ABORT txn-134
+ABORT txn-183
+ABORT txn-123
+ABORT txn-131
+ABORT txn-20
+ABORT txn-100
+ABORT txn-51
+ABORT txn-110
+ABORT txn-117
+ABORT txn-112
+ABORT txn-107
+ABORT txn-53
+ABORT txn-25
+ABORT txn-5
+ABORT txn-179
+ABORT txn-19
+ABORT txn-43
+ABORT txn-160
+ABORT txn-159
+ABORT txn-154
+ABORT txn-85
+ABORT txn-4
+ABORT txn-147
+ABORT txn-15
+ABORT txn-115
+ABORT txn-8
+ABORT txn-72
+ABORT txn-65
+ABORT txn-141
+ABORT txn-21
+ABORT txn-57
+ABORT txn-171
+ABORT txn-31
+ABORT txn-58
+ABORT txn-143
+ABORT txn-59
+ABORT txn-11
+ABORT txn-79
+ABORT txn-177
+ABORT txn-64
+ABORT txn-49
+ABORT txn-94
+ABORT txn-174
+ABORT txn-128
+ABORT txn-26
+ABORT txn-144
+ABORT txn-91
+ABORT txn-10
+ABORT txn-127
+FAST_COMMIT txn-76 [item-29 item-6]
+FAST_COMMIT txn-123 [item-32 item-1]
+FAST_COMMIT txn-149 [item-20 item-79]
+RAFT_PROPOSE txn-163 [item-1 item-4]
+FAST_COMMIT txn-143 [item-54 item-17]
+RAFT_PROPOSE txn-190 [item-3 item-0]
+FAST_COMMIT txn-174 [item-0 item-2]
+FAST_COMMIT txn-71 [item-3 item-38]
+FAST_COMMIT txn-160 [item-7 item-72]
+FAST_COMMIT txn-74 [item-4 item-8]
+RAFT_PROPOSE txn-193 [item-1 item-0]
+FAST_COMMIT txn-168 [item-5 item-18]
+RAFT_PROPOSE txn-48 [item-27 item-1]
+RAFT_PROPOSE txn-104 [item-0 item-0]
+RAFT_PROPOSE txn-184 [item-0 item-7]
+RAFT_PROPOSE txn-32 [item-0 item-23]
+RAFT_PROPOSE txn-132 [item-17 item-44]
+RAFT_PROPOSE txn-199 [item-75 item-20]
+RAFT_PROPOSE txn-161 [item-1 item-56]
+RAFT_PROPOSE txn-191 [item-3 item-76]
+RAFT_PROPOSE txn-165 [item-4 item-1]
+RAFT_PROPOSE txn-183 [item-8 item-46]
+RAFT_PROPOSE txn-166 [item-0 item-28]
+RAFT_PROPOSE txn-80 [item-2 item-0]
+RAFT_PROPOSE txn-88 [item-1 item-7]
+FAST_COMMIT txn-112 [item-52 item-12]
+RAFT_PROPOSE txn-195 [item-6 item-4]
+RAFT_PROPOSE txn-49 [item-5 item-2]
+FAST_COMMIT txn-42 [item-10 item-96]
+RAFT_PROPOSE txn-106 [item-6 item-0]
+RAFT_PROPOSE txn-189 [item-6 item-0]
+RAFT_PROPOSE txn-194 [item-1 item-13]
+FAST_COMMIT txn-77 [item-46 item-33]
+RAFT_PROPOSE txn-148 [item-2 item-58]
+FAST_COMMIT txn-12 [item-42 item-50]
+RAFT_PROPOSE txn-164 [item-1 item-3]
+RAFT_PROPOSE txn-47 [item-84 item-4]
+RAFT_PROPOSE txn-5 [item-1 item-4]
+RAFT_PROPOSE txn-15 [item-1 item-0]
+RAFT_PROPOSE txn-105 [item-0 item-2]
+RAFT_PROPOSE txn-10 [item-70 item-0]
+RAFT_PROPOSE txn-103 [item-0 item-5]
+RAFT_PROPOSE txn-33 [item-0 item-0]
+RAFT_PROPOSE txn-84 [item-2 item-5]
+RAFT_PROPOSE txn-134 [item-1 item-0]
+RAFT_PROPOSE txn-11 [item-1 item-13]
+RAFT_PROPOSE txn-53 [item-0 item-0]
+RAFT_PROPOSE txn-16 [item-81 item-4]
+RAFT_PROPOSE txn-141 [item-52 item-1]
+RAFT_PROPOSE txn-177 [item-0 item-13]
+RAFT_PROPOSE txn-157 [item-24 item-0]
+RAFT_PROPOSE txn-180 [item-2 item-11]
+RAFT_PROPOSE txn-131 [item-8 item-10]
+RAFT_PROPOSE txn-187 [item-19 item-3]
+RAFT_PROPOSE txn-9 [item-0 item-7]
+RAFT_PROPOSE txn-34 [item-65 item-7]
+RAFT_PROPOSE txn-44 [item-1 item-0]
+RAFT_PROPOSE txn-152 [item-27 item-2]
+RAFT_PROPOSE txn-151 [item-96 item-0]
+RAFT_PROPOSE txn-52 [item-0 item-12]
+RAFT_PROPOSE txn-147 [item-0 item-0]
+RAFT_PROPOSE txn-63 [item-0 item-7]
+RAFT_PROPOSE txn-0 [item-0 item-4]
+RAFT_PROPOSE txn-159 [item-0 item-77]
+RAFT_PROPOSE txn-113 [item-0 item-0]
+RAFT_PROPOSE txn-38 [item-1 item-9]
+RAFT_PROPOSE txn-108 [item-37 item-1]
+RAFT_PROPOSE txn-176 [item-36 item-12]
+FAST_COMMIT txn-13 [item-23 item-90]
+FAST_COMMIT txn-107 [item-66 item-35]
+RAFT_PROPOSE txn-29 [item-4 item-11]
+RAFT_PROPOSE txn-136 [item-8 item-43]
+RAFT_PROPOSE txn-26 [item-2 item-39]
+RAFT_PROPOSE txn-93 [item-6 item-2]
+RAFT_PROPOSE txn-115 [item-83 item-42]
+RAFT_PROPOSE txn-192 [item-0 item-1]
+RAFT_PROPOSE txn-116 [item-1 item-2]
+RAFT_PROPOSE txn-64 [item-1 item-0]
+FAST_COMMIT txn-117 [item-9 item-24]
+RAFT_PROPOSE txn-83 [item-24 item-3]
+FAST_COMMIT txn-144 [item-30 item-78]
+RAFT_PROPOSE txn-130 [item-0 item-1]
+RAFT_PROPOSE txn-37 [item-11 item-7]
+RAFT_PROPOSE txn-66 [item-3 item-2]
+RAFT_PROPOSE txn-99 [item-2 item-1]
+RAFT_PROPOSE txn-89 [item-1 item-42]
+RAFT_PROPOSE txn-90 [item-2 item-1]
+RAFT_PROPOSE txn-102 [item-1 item-23]
+RAFT_PROPOSE txn-98 [item-0 item-18]
+RAFT_PROPOSE txn-109 [item-15 item-2]
+FAST_COMMIT txn-96 [item-39 item-63]
+RAFT_PROPOSE txn-146 [item-0 item-15]
+RAFT_PROPOSE txn-65 [item-0 item-3]
+RAFT_PROPOSE txn-39 [item-0 item-4]
+RAFT_PROPOSE txn-45 [item-0 item-31]
+RAFT_PROPOSE txn-69 [item-0 item-30]
+RAFT_PROPOSE txn-59 [item-3 item-95]
+RAFT_PROPOSE txn-91 [item-7 item-3]
+RAFT_PROPOSE txn-85 [item-9 item-1]
+RAFT_PROPOSE txn-40 [item-0 item-12]
+FAST_COMMIT txn-20 [item-67 item-13]
+RAFT_PROPOSE txn-81 [item-35 item-1]
+RAFT_PROPOSE txn-170 [item-59 item-3]
+RAFT_PROPOSE txn-139 [item-2 item-9]
+RAFT_PROPOSE txn-171 [item-17 item-0]
+RAFT_PROPOSE txn-30 [item-58 item-1]
+RAFT_PROPOSE txn-62 [item-0 item-17]
+FAST_COMMIT txn-140 [item-87 item-37]
+RAFT_PROPOSE txn-137 [item-0 item-1]
+RAFT_PROPOSE txn-101 [item-18 item-0]
+RAFT_PROPOSE txn-8 [item-10 item-89]
+RAFT_PROPOSE txn-50 [item-10 item-1]
+RAFT_PROPOSE txn-60 [item-0 item-70]
+RAFT_PROPOSE txn-92 [item-4 item-2]
+RAFT_PROPOSE txn-145 [item-57 item-2]
+RAFT_PROPOSE txn-61 [item-16 item-1]
+RAFT_PROPOSE txn-24 [item-1 item-0]
+RAFT_PROPOSE txn-172 [item-1 item-0]
+RAFT_PROPOSE txn-72 [item-35 item-0]
+RAFT_PROPOSE txn-56 [item-7 item-4]
+RAFT_PROPOSE txn-114 [item-0 item-18]
+RAFT_PROPOSE txn-18 [item-3 item-14]
+RAFT_PROPOSE txn-57 [item-2 item-31]
+FAST_COMMIT txn-54 [item-49 item-56]
+RAFT_PROPOSE txn-138 [item-3 item-4]
+RAFT_PROPOSE txn-142 [item-0 item-0]
+RAFT_PROPOSE txn-87 [item-0 item-0]
+RAFT_PROPOSE txn-23 [item-1 item-3]
+RAFT_PROPOSE txn-25 [item-7 item-19]
+RAFT_PROPOSE txn-135 [item-0 item-0]
+RAFT_PROPOSE txn-186 [item-0 item-9]
+RAFT_PROPOSE txn-31 [item-0 item-0]
+RAFT_PROPOSE txn-196 [item-1 item-4]
+RAFT_PROPOSE txn-14 [item-0 item-0]
+RAFT_PROPOSE txn-158 [item-1 item-25]
+RAFT_PROPOSE txn-185 [item-19 item-1]
+RAFT_PROPOSE txn-173 [item-5 item-1]
+RAFT_PROPOSE txn-178 [item-1 item-0]
+RAFT_PROPOSE txn-188 [item-6 item-1]
+RAFT_PROPOSE txn-70 [item-29 item-2]
+RAFT_PROPOSE txn-154 [item-1 item-1]
+RAFT_PROPOSE txn-68 [item-1 item-6]
+RAFT_PROPOSE txn-198 [item-54 item-11]
+RAFT_PROPOSE txn-126 [item-1 item-16]
+RAFT_PROPOSE txn-1 [item-2 item-4]
+RAFT_PROPOSE txn-7 [item-1 item-75]
+RAFT_PROPOSE txn-67 [item-0 item-0]
+RAFT_PROPOSE txn-120 [item-7 item-87]
+RAFT_PROPOSE txn-129 [item-3 item-0]
+RAFT_PROPOSE txn-35 [item-6 item-2]
+RAFT_PROPOSE txn-58 [item-1 item-2]
+RAFT_PROPOSE txn-19 [item-9 item-1]
+RAFT_PROPOSE txn-111 [item-6 item-0]
+RAFT_PROPOSE txn-182 [item-1 item-25]
+RAFT_PROPOSE txn-27 [item-5 item-1]
+RAFT_PROPOSE txn-156 [item-19 item-4]
+RAFT_PROPOSE txn-75 [item-1 item-12]
+RAFT_PROPOSE txn-175 [item-25 item-2]
+RAFT_PROPOSE txn-95 [item-23 item-3]
+RAFT_PROPOSE txn-43 [item-12 item-0]
+RAFT_PROPOSE txn-22 [item-18 item-21]
+RAFT_PROPOSE txn-100 [item-0 item-7]
+RAFT_PROPOSE txn-86 [item-7 item-1]
+RAFT_PROPOSE txn-169 [item-95 item-9]
+RAFT_PROPOSE txn-119 [item-10 item-6]
+RAFT_PROPOSE txn-94 [item-15 item-13]
+RAFT_PROPOSE txn-133 [item-50 item-4]
+RAFT_PROPOSE txn-110 [item-16 item-1]
+RAFT_PROPOSE txn-2 [item-6 item-9]
+RAFT_PROPOSE txn-162 [item-5 item-2]
+RAFT_PROPOSE txn-78 [item-27 item-2]
+RAFT_PROPOSE txn-73 [item-12 item-3]
+RAFT_PROPOSE txn-3 [item-66 item-0]
+FAST_COMMIT txn-121 [item-31 item-92]
+RAFT_PROPOSE txn-79 [item-12 item-89]
+RAFT_PROPOSE txn-97 [item-18 item-0]
+RAFT_PROPOSE txn-122 [item-12 item-14]
+RAFT_PROPOSE txn-51 [item-0 item-60]
+RAFT_PROPOSE txn-150 [item-0 item-1]
+RAFT_PROPOSE txn-125 [item-96 item-0]
+RAFT_PROPOSE txn-82 [item-0 item-69]
+RAFT_PROPOSE txn-41 [item-23 item-9]
+RAFT_PROPOSE txn-55 [item-11 item-0]
+RAFT_PROPOSE txn-46 [item-26 item-0]
+FAST_COMMIT txn-197 [item-28 item-40]
+RAFT_PROPOSE txn-128 [item-0 item-81]
+RAFT_PROPOSE txn-17 [item-0 item-35]
+RAFT_PROPOSE txn-127 [item-0 item-1]
+RAFT_PROPOSE txn-124 [item-0 item-9]
+RAFT_PROPOSE txn-155 [item-16 item-0]
+RAFT_PROPOSE txn-153 [item-0 item-41]
+RAFT_PROPOSE txn-28 [item-0 item-2]
+RAFT_PROPOSE txn-36 [item-0 item-0]
+RAFT_PROPOSE txn-179 [item-0 item-0]
+ABORT txn-76
+ABORT txn-123
+ABORT txn-149
+ABORT txn-143
+ABORT txn-174
+ABORT txn-71
+ABORT txn-160
+ABORT txn-74
+ABORT txn-168
+ABORT txn-112
+ABORT txn-42
+ABORT txn-77
+ABORT txn-12
+ABORT txn-107
+ABORT txn-13
+ABORT txn-144
+ABORT txn-117
+ABORT txn-96
+ABORT txn-20
+ABORT txn-140
+ABORT txn-54
+ABORT txn-121
+ABORT txn-197
+ABORT txn-61
+ABORT txn-37
+ABORT txn-191
+ABORT txn-159
+ABORT txn-199
+ABORT txn-145
+ABORT txn-132
+ABORT txn-16
+ABORT txn-136
+ABORT txn-22
+ABORT txn-176
+ABORT txn-119
+ABORT txn-115
+ABORT txn-169
+ABORT txn-94
+ABORT txn-198
+ABORT txn-120
+ABORT txn-158
+ABORT txn-83
+ABORT txn-183
+ABORT txn-67
+ABORT txn-1
+ABORT txn-122
+ABORT txn-8
+ABORT txn-2
+ABORT txn-25
+ABORT txn-30
+ABORT txn-170
+ABORT txn-153
+ABORT txn-109
+ABORT txn-47
+ABORT txn-79
+ABORT txn-131
+ABORT txn-41
+ABORT txn-34
+ABORT txn-108
+ABORT txn-55
+ABORT txn-138
+ABORT txn-162
+ABORT txn-126
+ABORT txn-124
+ABORT txn-156
+ABORT txn-70
+ABORT txn-59
+FAST_COMMIT txn-100 [item-0 item-1]
+FAST_COMMIT txn-142 [item-23 item-15]
+FAST_COMMIT txn-158 [item-9 item-2]
+FAST_COMMIT txn-159 [item-56 item-27]
+RAFT_PROPOSE txn-83 [item-3 item-0]
+FAST_COMMIT txn-51 [item-7 item-3]
+FAST_COMMIT txn-27 [item-8 item-5]
+RAFT_PROPOSE txn-25 [item-2 item-16]
+RAFT_PROPOSE txn-196 [item-27 item-12]
+RAFT_PROPOSE txn-4 [item-0 item-74]
+RAFT_PROPOSE txn-183 [item-85 item-1]
+RAFT_PROPOSE txn-149 [item-1 item-10]
+FAST_COMMIT txn-157 [item-19 item-6]
+RAFT_PROPOSE txn-193 [item-84 item-0]
+RAFT_PROPOSE txn-168 [item-0 item-32]
+RAFT_PROPOSE txn-135 [item-0 item-0]
+RAFT_PROPOSE txn-127 [item-1 item-12]
+RAFT_PROPOSE txn-13 [item-24 item-9]
+RAFT_PROPOSE txn-184 [item-0 item-55]
+RAFT_PROPOSE txn-85 [item-65 item-0]
+RAFT_PROPOSE txn-190 [item-0 item-1]
+RAFT_PROPOSE txn-126 [item-0 item-50]
+RAFT_PROPOSE txn-153 [item-6 item-8]
+RAFT_PROPOSE txn-120 [item-4 item-15]
+RAFT_PROPOSE txn-140 [item-45 item-0]
+RAFT_PROPOSE txn-188 [item-5 item-2]
+RAFT_PROPOSE txn-128 [item-6 item-6]
+RAFT_PROPOSE txn-28 [item-11 item-19]
+FAST_COMMIT txn-195 [item-33 item-39]
+RAFT_PROPOSE txn-167 [item-0 item-3]
+RAFT_PROPOSE txn-52 [item-0 item-61]
+RAFT_PROPOSE txn-189 [item-0 item-0]
+RAFT_PROPOSE txn-148 [item-0 item-6]
+RAFT_PROPOSE txn-26 [item-47 item-6]
+RAFT_PROPOSE txn-146 [item-2 item-13]
+RAFT_PROPOSE txn-170 [item-0 item-3]
+FAST_COMMIT txn-180 [item-13 item-97]
+RAFT_PROPOSE txn-173 [item-0 item-4]
+FAST_COMMIT txn-129 [item-67 item-55]
+RAFT_PROPOSE txn-3 [item-0 item-1]
+RAFT_PROPOSE txn-18 [item-0 item-1]
+RAFT_PROPOSE txn-177 [item-2 item-1]
+RAFT_PROPOSE txn-21 [item-0 item-36]
+RAFT_PROPOSE txn-137 [item-5 item-0]
+RAFT_PROPOSE txn-48 [item-0 item-2]
+FAST_COMMIT txn-7 [item-4 item-17]
+RAFT_PROPOSE txn-37 [item-3 item-34]
+RAFT_PROPOSE txn-76 [item-22 item-0]
+RAFT_PROPOSE txn-160 [item-0 item-0]
+RAFT_PROPOSE txn-162 [item-0 item-80]
+RAFT_PROPOSE txn-96 [item-1 item-86]
+RAFT_PROPOSE txn-192 [item-68 item-6]
+RAFT_PROPOSE txn-23 [item-6 item-0]
+RAFT_PROPOSE txn-181 [item-1 item-64]
+RAFT_PROPOSE txn-79 [item-21 item-1]
+RAFT_PROPOSE txn-89 [item-5 item-2]
+RAFT_PROPOSE txn-134 [item-32 item-2]
+RAFT_PROPOSE txn-70 [item-9 item-0]
+RAFT_PROPOSE txn-5 [item-67 item-44]
+RAFT_PROPOSE txn-50 [item-18 item-1]
+RAFT_PROPOSE txn-36 [item-1 item-26]
+RAFT_PROPOSE txn-57 [item-5 item-0]
+RAFT_PROPOSE txn-19 [item-0 item-0]
+RAFT_PROPOSE txn-91 [item-15 item-34]
+RAFT_PROPOSE txn-54 [item-5 item-5]
+RAFT_PROPOSE txn-88 [item-0 item-13]
+RAFT_PROPOSE txn-106 [item-0 item-3]
+RAFT_PROPOSE txn-82 [item-35 item-97]
+RAFT_PROPOSE txn-194 [item-1 item-7]
+FAST_COMMIT txn-114 [item-96 item-12]
+RAFT_PROPOSE txn-97 [item-12 item-5]
+RAFT_PROPOSE txn-187 [item-0 item-56]
+RAFT_PROPOSE txn-110 [item-73 item-0]
+RAFT_PROPOSE txn-150 [item-0 item-8]
+RAFT_PROPOSE txn-15 [item-0 item-5]
+RAFT_PROPOSE txn-62 [item-2 item-1]
+RAFT_PROPOSE txn-9 [item-8 item-0]
+RAFT_PROPOSE txn-68 [item-13 item-1]
+RAFT_PROPOSE txn-131 [item-34 item-4]
+RAFT_PROPOSE txn-169 [item-1 item-12]
+RAFT_PROPOSE txn-58 [item-1 item-3]
+RAFT_PROPOSE txn-6 [item-0 item-0]
+RAFT_PROPOSE txn-133 [item-1 item-16]
+RAFT_PROPOSE txn-186 [item-3 item-0]
+RAFT_PROPOSE txn-17 [item-7 item-19]
+FAST_COMMIT txn-59 [item-38 item-77]
+FAST_COMMIT txn-67 [item-28 item-25]
+RAFT_PROPOSE txn-166 [item-0 item-10]
+RAFT_PROPOSE txn-143 [item-20 item-0]
+RAFT_PROPOSE txn-145 [item-5 item-0]
+RAFT_PROPOSE txn-185 [item-1 item-22]
+RAFT_PROPOSE txn-8 [item-0 item-16]
+RAFT_PROPOSE txn-116 [item-0 item-0]
+RAFT_PROPOSE txn-152 [item-8 item-7]
+RAFT_PROPOSE txn-171 [item-4 item-48]
+RAFT_PROPOSE txn-103 [item-1 item-43]
+RAFT_PROPOSE txn-119 [item-12 item-24]
+FAST_COMMIT txn-94 [item-64 item-80]
+RAFT_PROPOSE txn-182 [item-2 item-6]
+RAFT_PROPOSE txn-93 [item-0 item-0]
+RAFT_PROPOSE txn-161 [item-3 item-11]
+RAFT_PROPOSE txn-29 [item-2 item-6]
+RAFT_PROPOSE txn-95 [item-0 item-26]
+FAST_COMMIT txn-11 [item-58 item-16]
+RAFT_PROPOSE txn-87 [item-0 item-0]
+RAFT_PROPOSE txn-121 [item-3 item-10]
+FAST_COMMIT txn-199 [item-10 item-36]
+RAFT_PROPOSE txn-104 [item-0 item-9]
+RAFT_PROPOSE txn-14 [item-16 item-5]
+RAFT_PROPOSE txn-172 [item-5 item-10]
+RAFT_PROPOSE txn-45 [item-0 item-7]
+RAFT_PROPOSE txn-47 [item-0 item-2]
+RAFT_PROPOSE txn-0 [item-0 item-0]
+RAFT_PROPOSE txn-1 [item-0 item-6]
+RAFT_PROPOSE txn-163 [item-2 item-0]
+RAFT_PROPOSE txn-56 [item-2 item-14]
+RAFT_PROPOSE txn-132 [item-1 item-3]
+RAFT_PROPOSE txn-178 [item-1 item-15]
+RAFT_PROPOSE txn-24 [item-3 item-0]
+RAFT_PROPOSE txn-64 [item-38 item-13]
+RAFT_PROPOSE txn-124 [item-6 item-16]
+RAFT_PROPOSE txn-144 [item-5 item-0]
+RAFT_PROPOSE txn-44 [item-8 item-7]
+RAFT_PROPOSE txn-31 [item-19 item-28]
+FAST_COMMIT txn-155 [item-84 item-62]
+RAFT_PROPOSE txn-42 [item-22 item-5]
+RAFT_PROPOSE txn-165 [item-2 item-1]
+RAFT_PROPOSE txn-38 [item-36 item-8]
+RAFT_PROPOSE txn-12 [item-0 item-15]
+RAFT_PROPOSE txn-55 [item-0 item-21]
+RAFT_PROPOSE txn-74 [item-7 item-0]
+RAFT_PROPOSE txn-73 [item-0 item-5]
+RAFT_PROPOSE txn-77 [item-3 item-1]
+RAFT_PROPOSE txn-75 [item-22 item-2]
+RAFT_PROPOSE txn-198 [item-10 item-0]
+RAFT_PROPOSE txn-90 [item-1 item-0]
+RAFT_PROPOSE txn-86 [item-8 item-0]
+RAFT_PROPOSE txn-92 [item-14 item-2]
+FAST_COMMIT txn-43 [item-88 item-81]
+RAFT_PROPOSE txn-138 [item-14 item-33]
+RAFT_PROPOSE txn-108 [item-13 item-96]
+RAFT_PROPOSE txn-136 [item-9 item-34]
+RAFT_PROPOSE txn-53 [item-2 item-85]
+RAFT_PROPOSE txn-176 [item-16 item-0]
+RAFT_PROPOSE txn-101 [item-0 item-40]
+RAFT_PROPOSE txn-154 [item-0 item-9]
+RAFT_PROPOSE txn-30 [item-79 item-25]
+RAFT_PROPOSE txn-63 [item-52 item-0]
+RAFT_PROPOSE txn-69 [item-2 item-11]
+RAFT_PROPOSE txn-2 [item-2 item-0]
+RAFT_PROPOSE txn-16 [item-0 item-6]
+RAFT_PROPOSE txn-35 [item-0 item-0]
+RAFT_PROPOSE txn-122 [item-40 item-12]
+RAFT_PROPOSE txn-107 [item-1 item-36]
+RAFT_PROPOSE txn-84 [item-19 item-67]
+RAFT_PROPOSE txn-33 [item-4 item-6]
+RAFT_PROPOSE txn-66 [item-1 item-0]
+RAFT_PROPOSE txn-179 [item-0 item-94]
+RAFT_PROPOSE txn-39 [item-0 item-2]
+FAST_COMMIT txn-65 [item-34 item-60]
+RAFT_PROPOSE txn-102 [item-2 item-29]
+RAFT_PROPOSE txn-105 [item-64 item-89]
+RAFT_PROPOSE txn-34 [item-4 item-10]
+RAFT_PROPOSE txn-80 [item-4 item-58]
+RAFT_PROPOSE txn-125 [item-0 item-33]
+RAFT_PROPOSE txn-109 [item-6 item-0]
+RAFT_PROPOSE txn-139 [item-6 item-58]
+RAFT_PROPOSE txn-123 [item-9 item-0]
+RAFT_PROPOSE txn-141 [item-72 item-3]
+RAFT_PROPOSE txn-147 [item-38 item-1]
+RAFT_PROPOSE txn-156 [item-4 item-22]
+RAFT_PROPOSE txn-164 [item-0 item-9]
+RAFT_PROPOSE txn-191 [item-7 item-81]
+RAFT_PROPOSE txn-10 [item-0 item-56]
+RAFT_PROPOSE txn-174 [item-1 item-0]
+RAFT_PROPOSE txn-197 [item-5 item-6]
+RAFT_PROPOSE txn-99 [item-7 item-1]
+RAFT_PROPOSE txn-118 [item-14 item-0]
+RAFT_PROPOSE txn-20 [item-25 item-27]
+RAFT_PROPOSE txn-78 [item-4 item-0]
+RAFT_PROPOSE txn-111 [item-2 item-54]
+RAFT_PROPOSE txn-98 [item-0 item-4]
+RAFT_PROPOSE txn-117 [item-88 item-0]
+RAFT_PROPOSE txn-175 [item-6 item-1]
+FAST_COMMIT txn-72 [item-70 item-20]
+RAFT_PROPOSE txn-49 [item-0 item-18]
+RAFT_PROPOSE txn-113 [item-6 item-4]
+RAFT_PROPOSE txn-40 [item-1 item-1]
+RAFT_PROPOSE txn-81 [item-2 item-14]
+RAFT_PROPOSE txn-22 [item-33 item-0]
+RAFT_PROPOSE txn-60 [item-0 item-0]
+RAFT_PROPOSE txn-46 [item-8 item-0]
+RAFT_PROPOSE txn-112 [item-47 item-5]
+RAFT_PROPOSE txn-41 [item-4 item-14]
+RAFT_PROPOSE txn-71 [item-4 item-14]
+RAFT_PROPOSE txn-115 [item-0 item-5]
+RAFT_PROPOSE txn-32 [item-0 item-3]
+COMMIT txn-100
+COMMIT txn-158
+COMMIT txn-159
+COMMIT txn-51
+COMMIT txn-142
+COMMIT txn-27
+COMMIT txn-157
+COMMIT txn-195
+COMMIT txn-180
+COMMIT txn-129
+ABORT txn-7
+ABORT txn-114
+ABORT txn-59
+ABORT txn-67
+ABORT txn-94
+ABORT txn-11
+ABORT txn-199
+ABORT txn-155
+ABORT txn-43
+ABORT txn-65
+ABORT txn-72
+ABORT txn-85
+ABORT txn-103
+ABORT txn-75
+ABORT txn-13
+ABORT txn-141
+ABORT txn-44
+ABORT txn-54
+ABORT txn-26
+ABORT txn-28
+ABORT txn-138
+ABORT txn-82
+ABORT txn-5
+ABORT txn-171
+ABORT txn-108
+ABORT txn-122
+ABORT txn-20
+ABORT txn-105
+FAST_COMMIT txn-26 [item-13 item-8]
+FAST_COMMIT txn-102 [item-7 item-3]
+FAST_COMMIT txn-156 [item-0 item-1]
+RAFT_PROPOSE txn-123 [item-5 item-0]
+RAFT_PROPOSE txn-62 [item-14 item-0]
+RAFT_PROPOSE txn-115 [item-23 item-3]
+FAST_COMMIT txn-135 [item-14 item-65]
+FAST_COMMIT txn-46 [item-80 item-35]
+FAST_COMMIT txn-69 [item-33 item-20]
+RAFT_PROPOSE txn-194 [item-14 item-8]
+RAFT_PROPOSE txn-82 [item-0 item-14]
+RAFT_PROPOSE txn-43 [item-19 item-1]
+RAFT_PROPOSE txn-136 [item-4 item-0]
+RAFT_PROPOSE txn-32 [item-13 item-24]
+FAST_COMMIT txn-54 [item-5 item-39]
+RAFT_PROPOSE txn-138 [item-0 item-20]
+RAFT_PROPOSE txn-124 [item-80 item-0]
+RAFT_PROPOSE txn-25 [item-30 item-1]
+RAFT_PROPOSE txn-92 [item-1 item-0]
+RAFT_PROPOSE txn-72 [item-3 item-58]
+RAFT_PROPOSE txn-131 [item-3 item-1]
+RAFT_PROPOSE txn-112 [item-4 item-0]
+RAFT_PROPOSE txn-114 [item-6 item-8]
+RAFT_PROPOSE txn-29 [item-6 item-13]
+FAST_COMMIT txn-53 [item-10 item-77]
+FAST_COMMIT txn-34 [item-9 item-50]
+RAFT_PROPOSE txn-60 [item-5 item-2]
+RAFT_PROPOSE txn-30 [item-1 item-25]
+RAFT_PROPOSE txn-139 [item-0 item-7]
+RAFT_PROPOSE txn-35 [item-3 item-6]
+RAFT_PROPOSE txn-27 [item-1 item-3]
+RAFT_PROPOSE txn-73 [item-0 item-5]
+RAFT_PROPOSE txn-105 [item-0 item-0]
+RAFT_PROPOSE txn-66 [item-14 item-0]
+FAST_COMMIT txn-24 [item-2 item-87]
+RAFT_PROPOSE txn-181 [item-0 item-5]
+RAFT_PROPOSE txn-128 [item-0 item-1]
+RAFT_PROPOSE txn-21 [item-14 item-47]
+RAFT_PROPOSE txn-100 [item-0 item-0]
+RAFT_PROPOSE txn-78 [item-23 item-5]
+RAFT_PROPOSE txn-132 [item-31 item-3]
+RAFT_PROPOSE txn-185 [item-0 item-2]
+RAFT_PROPOSE txn-199 [item-48 item-3]
+RAFT_PROPOSE txn-23 [item-1 item-0]
+RAFT_PROPOSE txn-5 [item-23 item-2]
+RAFT_PROPOSE txn-40 [item-0 item-0]
+RAFT_PROPOSE txn-173 [item-2 item-21]
+RAFT_PROPOSE txn-140 [item-2 item-95]
+FAST_COMMIT txn-37 [item-17 item-4]
+RAFT_PROPOSE txn-45 [item-0 item-0]
+FAST_COMMIT txn-38 [item-18 item-6]
+RAFT_PROPOSE txn-133 [item-14 item-0]
+FAST_COMMIT txn-118 [item-22 item-38]
+RAFT_PROPOSE txn-91 [item-22 item-2]
+RAFT_PROPOSE txn-58 [item-0 item-84]
+FAST_COMMIT txn-141 [item-41 item-26]
+RAFT_PROPOSE txn-77 [item-1 item-0]
+RAFT_PROPOSE txn-196 [item-11 item-2]
+RAFT_PROPOSE txn-33 [item-1 item-0]
+RAFT_PROPOSE txn-8 [item-8 item-0]
+RAFT_PROPOSE txn-106 [item-1 item-91]
+RAFT_PROPOSE txn-70 [item-5 item-35]
+RAFT_PROPOSE txn-129 [item-4 item-15]
+RAFT_PROPOSE txn-176 [item-0 item-0]
+RAFT_PROPOSE txn-97 [item-16 item-0]
+RAFT_PROPOSE txn-186 [item-16 item-1]
+RAFT_PROPOSE txn-183 [item-1 item-4]
+RAFT_PROPOSE txn-110 [item-82 item-4]
+RAFT_PROPOSE txn-89 [item-23 item-2]
+RAFT_PROPOSE txn-153 [item-14 item-33]
+RAFT_PROPOSE txn-67 [item-0 item-1]
+RAFT_PROPOSE txn-98 [item-0 item-46]
+RAFT_PROPOSE txn-165 [item-5 item-14]
+RAFT_PROPOSE txn-116 [item-82 item-0]
+RAFT_PROPOSE txn-101 [item-0 item-30]
+RAFT_PROPOSE txn-31 [item-6 item-1]
+RAFT_PROPOSE txn-171 [item-38 item-7]
+RAFT_PROPOSE txn-51 [item-14 item-0]
+RAFT_PROPOSE txn-83 [item-68 item-2]
+RAFT_PROPOSE txn-80 [item-1 item-18]
+RAFT_PROPOSE txn-49 [item-4 item-38]
+RAFT_PROPOSE txn-42 [item-18 item-1]
+RAFT_PROPOSE txn-85 [item-15 item-6]
+RAFT_PROPOSE txn-13 [item-10 item-1]
+RAFT_PROPOSE txn-164 [item-14 item-6]
+RAFT_PROPOSE txn-36 [item-0 item-0]
+RAFT_PROPOSE txn-158 [item-1 item-0]
+RAFT_PROPOSE txn-170 [item-0 item-0]
+RAFT_PROPOSE txn-157 [item-0 item-4]
+RAFT_PROPOSE txn-28 [item-2 item-0]
+RAFT_PROPOSE txn-96 [item-24 item-0]
+RAFT_PROPOSE txn-182 [item-72 item-1]
+RAFT_PROPOSE txn-88 [item-11 item-8]
+RAFT_PROPOSE txn-152 [item-0 item-0]
+RAFT_PROPOSE txn-68 [item-23 item-10]
+RAFT_PROPOSE txn-3 [item-0 item-7]
+RAFT_PROPOSE txn-44 [item-53 item-1]
+RAFT_PROPOSE txn-120 [item-0 item-2]
+RAFT_PROPOSE txn-148 [item-0 item-2]
+RAFT_PROPOSE txn-63 [item-72 item-8]
+FAST_COMMIT txn-71 [item-28 item-52]
+RAFT_PROPOSE txn-143 [item-2 item-0]
+RAFT_PROPOSE txn-145 [item-22 item-39]
+RAFT_PROPOSE txn-162 [item-0 item-0]
+RAFT_PROPOSE txn-125 [item-2 item-0]
+RAFT_PROPOSE txn-190 [item-2 item-21]
+RAFT_PROPOSE txn-111 [item-2 item-1]
+RAFT_PROPOSE txn-75 [item-9 item-0]
+RAFT_PROPOSE txn-161 [item-13 item-39]
+RAFT_PROPOSE txn-187 [item-5 item-3]
+RAFT_PROPOSE txn-169 [item-40 item-5]
+RAFT_PROPOSE txn-117 [item-75 item-7]
+RAFT_PROPOSE txn-22 [item-2 item-59]
+RAFT_PROPOSE txn-107 [item-86 item-22]
+RAFT_PROPOSE txn-55 [item-70 item-4]
+RAFT_PROPOSE txn-155 [item-5 item-39]
+RAFT_PROPOSE txn-52 [item-56 item-9]
+FAST_COMMIT txn-159 [item-19 item-58]
+RAFT_PROPOSE txn-160 [item-0 item-43]
+RAFT_PROPOSE txn-189 [item-0 item-83]
+RAFT_PROPOSE txn-50 [item-4 item-1]
+RAFT_PROPOSE txn-15 [item-0 item-0]
+RAFT_PROPOSE txn-10 [item-0 item-0]
+RAFT_PROPOSE txn-109 [item-75 item-0]
+RAFT_PROPOSE txn-12 [item-20 item-1]
+RAFT_PROPOSE txn-18 [item-11 item-26]
+FAST_COMMIT txn-14 [item-86 item-97]
+RAFT_PROPOSE txn-154 [item-3 item-6]
+RAFT_PROPOSE txn-147 [item-29 item-6]
+RAFT_PROPOSE txn-19 [item-15 item-13]
+RAFT_PROPOSE txn-84 [item-4 item-1]
+RAFT_PROPOSE txn-146 [item-0 item-15]
+RAFT_PROPOSE txn-151 [item-2 item-14]
+RAFT_PROPOSE txn-167 [item-0 item-14]
+RAFT_PROPOSE txn-179 [item-0 item-0]
+RAFT_PROPOSE txn-184 [item-1 item-0]
+RAFT_PROPOSE txn-81 [item-12 item-0]
+FAST_COMMIT txn-4 [item-85 item-91]
+RAFT_PROPOSE txn-177 [item-0 item-49]
+RAFT_PROPOSE txn-16 [item-19 item-0]
+RAFT_PROPOSE txn-20 [item-0 item-76]
+RAFT_PROPOSE txn-175 [item-0 item-1]
+RAFT_PROPOSE txn-57 [item-3 item-10]
+RAFT_PROPOSE txn-193 [item-21 item-0]
+RAFT_PROPOSE txn-41 [item-4 item-26]
+RAFT_PROPOSE txn-191 [item-100 item-39]
+RAFT_PROPOSE txn-99 [item-4 item-0]
+RAFT_PROPOSE txn-39 [item-32 item-19]
+RAFT_PROPOSE txn-108 [item-1 item-13]
+RAFT_PROPOSE txn-188 [item-0 item-98]
+RAFT_PROPOSE txn-103 [item-1 item-4]
+RAFT_PROPOSE txn-11 [item-28 item-0]
+RAFT_PROPOSE txn-197 [item-10 item-1]
+RAFT_PROPOSE txn-1 [item-51 item-0]
+RAFT_PROPOSE txn-2 [item-1 item-9]
+RAFT_PROPOSE txn-149 [item-0 item-70]
+RAFT_PROPOSE txn-9 [item-0 item-32]
+RAFT_PROPOSE txn-122 [item-0 item-1]
+RAFT_PROPOSE txn-163 [item-0 item-9]
+RAFT_PROPOSE txn-7 [item-0 item-49]
+RAFT_PROPOSE txn-94 [item-0 item-0]
+RAFT_PROPOSE txn-74 [item-11 item-1]
+RAFT_PROPOSE txn-90 [item-0 item-0]
+RAFT_PROPOSE txn-198 [item-0 item-4]
+FAST_COMMIT txn-93 [item-51 item-70]
+RAFT_PROPOSE txn-172 [item-0 item-1]
+RAFT_PROPOSE txn-59 [item-6 item-2]
+FAST_COMMIT txn-64 [item-27 item-49]
+RAFT_PROPOSE txn-168 [item-53 item-2]
+RAFT_PROPOSE txn-144 [item-28 item-1]
+RAFT_PROPOSE txn-0 [item-1 item-0]
+RAFT_PROPOSE txn-76 [item-0 item-20]
+RAFT_PROPOSE txn-113 [item-7 item-2]
+RAFT_PROPOSE txn-47 [item-2 item-42]
+RAFT_PROPOSE txn-130 [item-21 item-0]
+RAFT_PROPOSE txn-180 [item-9 item-0]
+RAFT_PROPOSE txn-192 [item-4 item-1]
+RAFT_PROPOSE txn-6 [item-2 item-17]
+FAST_COMMIT txn-65 [item-83 item-25]
+RAFT_PROPOSE txn-61 [item-1 item-24]
+RAFT_PROPOSE txn-56 [item-1 item-22]
+RAFT_PROPOSE txn-178 [item-0 item-8]
+FAST_COMMIT txn-166 [item-43 item-84]
+RAFT_PROPOSE txn-195 [item-3 item-2]
+RAFT_PROPOSE txn-17 [item-16 item-3]
+RAFT_PROPOSE txn-48 [item-0 item-10]
+RAFT_PROPOSE txn-86 [item-0 item-2]
+RAFT_PROPOSE txn-150 [item-0 item-11]
+RAFT_PROPOSE txn-119 [item-1 item-0]
+RAFT_PROPOSE txn-174 [item-0 item-2]
+RAFT_PROPOSE txn-142 [item-1 item-0]
+RAFT_PROPOSE txn-79 [item-1 item-6]
+RAFT_PROPOSE txn-126 [item-1 item-41]
+RAFT_PROPOSE txn-137 [item-3 item-4]
+RAFT_PROPOSE txn-127 [item-0 item-92]
+RAFT_PROPOSE txn-87 [item-0 item-3]
+RAFT_PROPOSE txn-121 [item-0 item-0]
+RAFT_PROPOSE txn-95 [item-11 item-0]
+COMMIT txn-156
+COMMIT txn-26
+COMMIT txn-46
+COMMIT txn-135
+COMMIT txn-102
+COMMIT txn-69
+COMMIT txn-54
+COMMIT txn-53
+COMMIT txn-34
+COMMIT txn-24
+ABORT txn-37
+ABORT txn-38
+ABORT txn-118
+ABORT txn-141
+ABORT txn-71
+ABORT txn-159
+ABORT txn-14
+ABORT txn-4
+ABORT txn-93
+ABORT txn-64
+ABORT txn-65
+ABORT txn-166
+ABORT txn-184
+ABORT txn-32
+ABORT txn-63
+ABORT txn-21
+ABORT txn-117
+ABORT txn-132
+ABORT txn-191
+ABORT txn-169
+ABORT txn-68
+ABORT txn-52
+ABORT txn-22
+ABORT txn-129
+ABORT txn-147
+ABORT txn-18
+ABORT txn-39

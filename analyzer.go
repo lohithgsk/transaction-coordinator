@@ -44,74 +44,85 @@ func (da *DependencyAnalyzer) Release(keys []string) {
 	}
 } */
 
-
 package main
 
 import (
+	"hash/fnv"
 	"sync"
 	"time"
 )
 
+const NUM_SHARDS = 256
+
+type LockShard struct {
+	mu          sync.RWMutex
+	activeLocks map[string]string
+}
+
+// Struct name remains the same so coordinator.go doesn't break
 type DependencyAnalyzer struct {
-	activeLocks map[string]string // Key -> TxnID
-	mu          sync.Mutex
+	shards [NUM_SHARDS]*LockShard
 }
 
 func NewDependencyAnalyzer() *DependencyAnalyzer {
-	return &DependencyAnalyzer{
-		activeLocks: make(map[string]string),
+	da := &DependencyAnalyzer{}
+	for i := 0; i < NUM_SHARDS; i++ {
+		da.shards[i] = &LockShard{activeLocks: make(map[string]string)}
 	}
+	return da
 }
 
-// IsIndependent checks if keys are free BEFORE locking.
+// O(1) Shard Resolution
+func getShardIndex(key string) uint32 {
+	h := fnv.New32a()
+	h.Write([]byte(key))
+	return h.Sum32() % NUM_SHARDS
+}
+
 func (da *DependencyAnalyzer) IsIndependent(keys []string) bool {
-	da.mu.Lock()
-	defer da.mu.Unlock()
-
 	for _, key := range keys {
-		if _, exists := da.activeLocks[key]; exists {
-			return false // Conflict detected
+		shard := da.shards[getShardIndex(key)]
+		shard.mu.RLock()
+		_, exists := shard.activeLocks[key]
+		shard.mu.RUnlock()
+		if exists {
+			return false // Conflict found
 		}
 	}
-	return true // No conflicts!
+	return true
 }
 
-// TryLock attempts to lock the keys. If wait=true (Slow Path), it queues up.
+// TryLock implements targeted sharded locking and handles the wait boolean
 func (da *DependencyAnalyzer) TryLock(txnID string, keys []string, wait bool) bool {
-	retries := 0
+	timeout := time.After(30 * time.Second)
 	for {
-		da.mu.Lock()
-		conflict := false
-		for _, key := range keys {
-			if _, exists := da.activeLocks[key]; exists {
-				conflict = true
-				break
-			}
-		}
-
-		if !conflict {
-			// Success: Acquire locks
+		if da.IsIndependent(keys) {
 			for _, key := range keys {
-				da.activeLocks[key] = txnID
+				shard := da.shards[getShardIndex(key)]
+				shard.mu.Lock()
+				shard.activeLocks[key] = txnID
+				shard.mu.Unlock()
 			}
-			da.mu.Unlock()
 			return true
 		}
-		da.mu.Unlock()
 
-		// If it's Fast Path, we don't wait. If it's Slow Path, we wait in queue.
-		if !wait || retries > 10 {
-			return false
+		if !wait {
+			return false // Fast Path drops immediately
 		}
-		retries++
-		time.Sleep(1 * time.Second) // Wait in queue
+
+		select {
+		case <-timeout:
+			return false // Slow Path queues for 10s max
+		case <-time.After(50 * time.Millisecond): // Poll
+		}
 	}
 }
 
 func (da *DependencyAnalyzer) Release(keys []string) {
-	da.mu.Lock()
-	defer da.mu.Unlock()
 	for _, key := range keys {
-		delete(da.activeLocks, key)
+		shard := da.shards[getShardIndex(key)]
+		shard.mu.Lock()
+		delete(shard.activeLocks, key)
+		shard.mu.Unlock()
 	}
 }

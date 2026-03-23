@@ -25,6 +25,7 @@ func main() {
 		log.Fatal(http.ListenAndServe(":"+*port, nil))
 	}
 } */
+
 package main
 
 import (
@@ -33,6 +34,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"math/rand" // Required for Zipfian distribution
 	"net/http"
 	"sync"
 	"sync/atomic"
@@ -43,7 +45,7 @@ func main() {
 	// 1. Define all the flags here BEFORE flag.Parse()
 	mode := flag.String("mode", "coordinator", "Modes: coordinator | participant | cluster | loadtest")
 	port := flag.String("port", "8082", "Port to listen on")
-	testType := flag.String("type", "high", "For loadtest: high | low")
+	testType := flag.String("type", "high", "For loadtest: high | low | mixed | zipf")
 	flag.Parse()
 
 	// 2. Mode Routings
@@ -65,67 +67,108 @@ func main() {
 		for i := 0; i < 100; i++ {
 			pPort := fmt.Sprintf("%d", 8081+i)
 			p := &Participant{Port: pPort, Locks: make(map[string]string)}
-			
+
 			mux := http.NewServeMux()
 			mux.HandleFunc("/prepare", p.HandlePrepare)
 			mux.HandleFunc("/commit", p.HandleCommit)
-			
+
 			go http.ListenAndServe(":"+pPort, mux)
 		}
 		log.Println("Cluster of 100 Databases is running! Press Ctrl+C to stop.")
-		select {} 
+		select {}
 
 	} else if *mode == "loadtest" {
-		log.Printf("Starting %s contention load test with 50 concurrent requests...", *testType)
+		log.Printf("Starting %s contention load test...", *testType)
 
 		var wg sync.WaitGroup
 		var successes, failures int32
 		startTime := time.Now()
 
-		// Replace the loadtest loop inside main.go with this:
-	for i := 0; i < 50; i++ {
-		wg.Add(1)
-		go func(reqID int) {
-			defer wg.Done()
+		// ==========================================
+		// TEST A: REALISTIC WORKLOAD (Zipfian Skew)
+		// ==========================================
+		if *testType == "zipf" {
+			log.Println("Generating highly skewed 80/20 distribution for 200 txns...")
+			zipf := rand.NewZipf(rand.New(rand.NewSource(time.Now().UnixNano())), 1.1, 1.0, 100)
 
-			var key string
-			if *testType == "low" {
-				key = fmt.Sprintf("user-%d", reqID)
-			} else if *testType == "high" {
-				key = "HOT_KEY"
-			} else if *testType == "mixed" {
-				// 80% independent (Fast Path), 20% conflicting (Slow Path)
-				if reqID < 40 {
-					key = fmt.Sprintf("user-%d", reqID)
-				} else {
-					key = "HOT_KEY"
-				}
+			for i := 0; i < 200; i++ {
+				wg.Add(1)
+				go func(reqID int) {
+					defer wg.Done()
+
+					// Simulates microservice multi-object transactions
+					key1 := fmt.Sprintf("item-%d", zipf.Uint64())
+					key2 := fmt.Sprintf("item-%d", zipf.Uint64())
+
+					reqBody, _ := json.Marshal(TransactionMetadata{
+						ID:           fmt.Sprintf("txn-%d", reqID),
+						Keys:         []string{key1, key2}, // Multi-object graph model
+						Participants: []string{"http://localhost:8081"},
+					})
+
+					resp, err := http.Post("http://localhost:8082/txn", "application/json", bytes.NewBuffer(reqBody))
+					if err != nil {
+						atomic.AddInt32(&failures, 1)
+						return
+					}
+					defer resp.Body.Close()
+
+					if resp.StatusCode == 200 {
+						atomic.AddInt32(&successes, 1)
+					} else {
+						atomic.AddInt32(&failures, 1)
+					}
+				}(i)
 			}
+		} else {
+			// ==========================================
+			// TEST B: STANDARD TESTS (Low, High, Mixed)
+			// ==========================================
+			for i := 0; i < 50; i++ {
+				wg.Add(1)
+				go func(reqID int) {
+					defer wg.Done()
 
-			reqBody, _ := json.Marshal(TransactionMetadata{
-				ID:           fmt.Sprintf("txn-%d", reqID),
-				Keys:         []string{key},
-				Participants: []string{"http://localhost:8081"},
-			})
+					var key string
+					if *testType == "low" {
+						key = fmt.Sprintf("user-%d", reqID)
+					} else if *testType == "high" {
+						key = "HOT_KEY"
+					} else if *testType == "mixed" {
+						// 80% independent (Fast Path), 20% conflicting (Slow Path)
+						if reqID < 40 {
+							key = fmt.Sprintf("user-%d", reqID)
+						} else {
+							key = "HOT_KEY"
+						}
+					}
 
-			resp, err := http.Post("http://localhost:8082/txn", "application/json", bytes.NewBuffer(reqBody))
-			if err != nil {
-				atomic.AddInt32(&failures, 1)
-				return
+					reqBody, _ := json.Marshal(TransactionMetadata{
+						ID:           fmt.Sprintf("txn-%d", reqID),
+						Keys:         []string{key},
+						Participants: []string{"http://localhost:8081"},
+					})
+
+					resp, err := http.Post("http://localhost:8082/txn", "application/json", bytes.NewBuffer(reqBody))
+					if err != nil {
+						atomic.AddInt32(&failures, 1)
+						return
+					}
+					defer resp.Body.Close()
+
+					if resp.StatusCode == 200 {
+						atomic.AddInt32(&successes, 1)
+					} else {
+						atomic.AddInt32(&failures, 1)
+					}
+				}(i)
 			}
-			defer resp.Body.Close()
+		}
 
-			if resp.StatusCode == 200 {
-				atomic.AddInt32(&successes, 1)
-			} else {
-				atomic.AddInt32(&failures, 1)
-			}
-		}(i)
-	}
-
-		wg.Wait() // Wait for all 50 requests to finish
+		// Wait for all requests to finish, regardless of which test ran
+		wg.Wait()
 		duration := time.Since(startTime)
-		
+
 		fmt.Printf("\n========================================\n")
 		fmt.Printf("          LOAD TEST RESULTS             \n")
 		fmt.Printf("========================================\n")

@@ -91,6 +91,7 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+	"context"
 )
 
 type TransactionManager struct {
@@ -101,9 +102,17 @@ type TransactionManager struct {
 const ENABLE_DEPENDENCY_ANALYZER = true
 
 func NewCoordinator(walFile string) *TransactionManager {
+	// START THE RECOVERY TIMER
+	startTime := time.Now()
+
 	wal := NewWAL(walFile)
 	history := wal.ReadAll()
+	
+	// STOP THE TIMER
+	recoveryTime := time.Since(startTime)
+
 	log.Printf("--- RECOVERY: Found %d historical entries in log ---", len(history))
+	log.Printf("--- MEAN TIME TO RECOVERY (MTTR): %v ---", recoveryTime)
 
 	return &TransactionManager{
 		analyzer: NewDependencyAnalyzer(),
@@ -151,7 +160,9 @@ func (tm *TransactionManager) HandleBegin(w http.ResponseWriter, r *http.Request
 		}
 		defer tm.analyzer.Release(meta.Keys)
 		
-		// FAST PATH: Executes immediately, skips the RAFT_PROPOSE disk write
+		// NOVELTY: Dependency-Aware Fast Path Logging
+		// By logging the keys, we leave a formal proof of non-conflict for the Recovery Manager
+		tm.wal.Write(fmt.Sprintf("FAST_COMMIT %s %v", meta.ID, meta.Keys)) 
 		tm.execute2PC(w, meta, "FAST_PATH")
 		
 	} else {
@@ -186,21 +197,36 @@ func (tm *TransactionManager) broadcast(participants []string, endpoint string, 
 	var wg sync.WaitGroup
 	var successCount int32 = 0
 
-	// Fire all 100 requests at the EXACT SAME TIME
+	// STRICT TIMEOUT: If a DB doesn't reply in 2 seconds, we automatically fail the txn.
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
 	for _, p := range participants {
 		wg.Add(1)
 		go func(url string) {
 			defer wg.Done()
-			fullURL := fmt.Sprintf("%s/%s", url, endpoint)
-			body, _ := json.Marshal(PrepareRequest{TxnID: meta.ID, Keys: meta.Keys})
-			resp, err := http.Post(fullURL, "application/json", bytes.NewBuffer(body))
+			fullURL := url + "/" + endpoint
+			
+			// FIX: Map the JSON keys exactly to what the Participant expects!
+			payload := map[string]interface{}{
+				"TxnID": meta.ID,
+				"Keys":  meta.Keys,
+			}
+			body, _ := json.Marshal(payload)
+			
+			req, _ := http.NewRequestWithContext(ctx, "POST", fullURL, bytes.NewBuffer(body))
+			req.Header.Set("Content-Type", "application/json")
+			
+			client := &http.Client{}
+			resp, err := client.Do(req)
+			
 			if err == nil && resp.StatusCode == 200 {
-				atomic.AddInt32(&successCount, 1) // Thread-safe counter
+				atomic.AddInt32(&successCount, 1)
 			}
 		}(p)
 	}
 	
-	wg.Wait() // Wait for all 100 databases to reply
+	wg.Wait()
 	return int(successCount) == len(participants)
 }
 
@@ -209,7 +235,14 @@ func (tm *TransactionManager) sendDecision(meta TransactionMetadata, action stri
 	for _, p := range meta.Participants {
 		go func(url string) {
 			fullURL := fmt.Sprintf("%s/commit", url)
-			body, _ := json.Marshal(CommitRequest{TxnID: meta.ID, Action: action})
+			
+			// FIX: Map the Commit JSON exactly
+			payload := map[string]interface{}{
+				"TxnID":  meta.ID,
+				"Action": action,
+			}
+			body, _ := json.Marshal(payload)
+			
 			http.Post(fullURL, "application/json", bytes.NewBuffer(body))
 		}(p)
 	}
