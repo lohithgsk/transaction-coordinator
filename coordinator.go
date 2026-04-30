@@ -207,7 +207,7 @@ func (tm *TransactionManager) broadcast(participants []string, endpoint string, 
 			defer wg.Done()
 			fullURL := url + "/" + endpoint
 			
-			// FIX: Map the JSON keys exactly to what the Participant expects!
+			
 			payload := map[string]interface{}{
 				"TxnID": meta.ID,
 				"Keys":  meta.Keys,
@@ -236,7 +236,6 @@ func (tm *TransactionManager) sendDecision(meta TransactionMetadata, action stri
 		go func(url string) {
 			fullURL := fmt.Sprintf("%s/commit", url)
 			
-			// FIX: Map the Commit JSON exactly
 			payload := map[string]interface{}{
 				"TxnID":  meta.ID,
 				"Action": action,

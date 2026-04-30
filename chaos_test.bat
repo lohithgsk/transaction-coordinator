@@ -28,7 +28,7 @@ start "RecoveredCoordinator" cmd /k "go run . -mode=coordinator -port=8082"
 
 echo ===================================================
 echo DONE! Look at the 'RecoveredCoordinator' window.
-echo Find the line that says: 'MEAN TIME TO RECOVERY (MTTR)'
+echo Check 'MEAN TIME TO RECOVERY (MTTR)'
 echo ===================================================
 echo Press any key to clean up and kill all servers...
 pause > nul
