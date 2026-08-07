@@ -24,6 +24,8 @@ HCC solves this by enforcing an $O(1)$ constant-time sharded dependency analysis
 
 ## System Architecture
 
+![Architecture Diagram]([https://dummyimage.com/468x300?text=App+Screenshot+Here](https://github.com/lohithgsk/transaction-coordinator/blob/main/images/Architecture.png))
+
 ## Algorithmic Core
 The framework evaluates lock availability in constant time $O(\vert{}K\vert{})$, where $\vert{}K\vert{}$ is the number of keys in the transaction payload:
 ```
