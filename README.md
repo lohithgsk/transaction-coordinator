@@ -2,11 +2,11 @@
 > A High-Performance Middleware Layer for Non-Blocking, Dependency-Aware Distributed Transaction Coordination in Financial Microservices.
 
 ## Overview
-The Hybrid Consensus Coordinator (HCC) elevates distributed concurrency control from the physical database disk to an in-memory middleware layer. Designed specifically for financial microservice architectures (e.g., core banking, payment gateways, ledger settlements), HCC acts as a concurrency shield that decouples high-throughput transaction ingestion from physical database limitations.
+The Hybrid Consensus Coordinator (HCC) introduces an in-memory coordination layer that performs dependency analysis before dispatching transactions to participant databases. Designed specifically for financial microservice architectures (e.g., core banking, payment gateways, ledger settlements), HCC acts as a concurrency shield that decouples high-throughput transaction ingestion from physical database limitations.
 
 By inspecting payload read/write sets prior to database dispatch, HCC dynamically bifurcates traffic:
-1. Fast Path (Independent Execution): Conflict-free transactions bypass heavy Raft-style consensus entirely and execute in parallel across participant databases.Slow Path
-2. (Consensus Serialization): Conflicting "hot-key" transactions are quarantined in middleware RAM and serialized deterministically using Raft-compliant log entries.
+1. **Fast Path (Independent Execution):** Conflict-free transactions bypass the consensus serialization path entirely and execute in parallel across participant databases.
+2. **Slow Path (Consensus Serialization):** Conflicting "hot-key" transactions are quarantined in middleware RAM and serialized deterministically using Raft-compliant log entries.
 
 ## The Problem: 2PC & Locking Storms
 Traditional Two-Phase Commit (2PC) implementations are data-blind. During high-contention events (e.g., flash sales, payroll runs, market open spikes), hundreds of concurrent requests target the same database rows (e.g., a popular merchant account).
@@ -14,22 +14,21 @@ Traditional Two-Phase Commit (2PC) implementations are data-blind. During high-c
 - Without Middleware Shielding: Downstream databases attempt to grant local row locks to all incoming connections simultaneously.
 - The Result: Massive HTTP 409 Conflict spams, exhausted database TCP connection pools, thread starvation, and catastrophic system-wide "Locking Storms" where throughput collapses to $\sim0.4$ TPM.
 
-HCC solves this by enforcing an $O(1)$ constant-time sharded dependency analysis in middleware memory, resolving conflicts at microsecond latencies before opening a single database TCP socket.
+HCC solves this by enforcing an $O(1)$ constant-time sharded dependency analysis in middleware memory, resolving transaction dependencies before establishing participant database connections.
 
-##Key Features
-- Pre-Execution Sharded Dependency Analyzer: Hashes operational keys into a 256-shard FNV-1a hash map, isolated by sync.RWMutex primitives to eliminate global lock contention bottlenecks.
-- Dynamic Traffic Bifurcation: Bypasses Raft consensus for non-interfering transactions, cutting network round-trips and reducing physical Write-Ahead Log (WAL) disk I/O by 40%.Asynchronous Parallel 2PC Dispatcher: Broadcasts PREPARE and COMMIT phases in parallel using Go goroutines, bounding transaction latency strictly to the single slowest participant node regardless of whether the cluster contains 2 or 100 databases.
-- Bounded Non-Blocking Execution: Enforces strict 30-second context timeouts (context.WithTimeout) and cooperative load-shedding to prevent goroutine memory leaks.
-- Sub-Millisecond Crash Recovery (MTTR): Reconstructs the entire sharded in-memory lock state from an append-only, thread-safe WAL (w.file.Sync()) in $< 520 \mu s$ upon process assassination.
+## Key Features
+- **Pre-Execution Sharded Dependency Analyzer:** Hashes operational keys into a 256-shard FNV-1a hash map, isolated by sync.RWMutex primitives to eliminate global lock contention bottlenecks.
+- **Dynamic Traffic Bifurcation:** Bypasses Raft consensus for non-interfering transactions, cutting network round-trips and reducing physical Write-Ahead Log (WAL) disk I/O by 40%.Asynchronous Parallel 2PC Dispatcher: Broadcasts PREPARE and COMMIT phases in parallel using Go goroutines, bounding transaction latency strictly to the single slowest participant node regardless of whether the cluster contains 2 or 100 databases.
+- **Bounded Non-Blocking Execution:** Enforces strict 30-second context timeouts (context.WithTimeout) and cooperative load-shedding to prevent goroutine memory leaks.
+- **Sub-Millisecond Crash Recovery (MTTR):** Reconstructs the entire sharded in-memory lock state from an append-only, thread-safe WAL (w.file.Sync()) in $< 520 \mu s$ upon process assassination.
 
 ## System Architecture
 
-![Architecture Diagram]([https://dummyimage.com/468x300?text=App+Screenshot+Here](https://github.com/lohithgsk/transaction-coordinator/blob/main/images/Architecture.png))
+![Architecture Diagram](images/Architecture.png)
 
 ## Algorithmic Core
 The framework evaluates lock availability in constant time $O(\vert{}K\vert{})$, where $\vert{}K\vert{}$ is the number of keys in the transaction payload:
-```
-Algorithm 1: Hybrid Routing and Concurrency Control (HR-CC)
+```text
 =================================================================================
 Input : Transaction Payload T with Key Set K
 Output: Transaction Status (Committed / Aborted)
@@ -62,7 +61,7 @@ Tested against traditional data-blind 2PC baselines under severe Zipfian skew ($
 
 | Evaluation Metric | Baseline Strict 2PC | Proposed Hybrid Coordinator | Impact / Optimization |
 |-------------------------------|-------------------------|-------------------------------|-----------------------------------------------|
-| Throughput (100% Contention) | 0.4 TPM | 19.8 TPM | ~400% sustained throughput boost |
+| Throughput (100% Contention) | 0.4 TPM | 19.8 TPM | ~50x sustained throughput boost |
 | Active DB Network Connections | 50 simultaneous hits | 1 active hit | 98% reduction in DB locking storms |
 | Spike Resolution Time (50 Txns) | 150.0 seconds | 12.1 seconds | Resolved contention 12× faster |
 | Physical Disk I/O (WAL) | 100 physical writes | 60 physical writes | 40% reduction in storage bottleneck |
